@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114425615856912190}
   m_Layer: 0
   m_Name: Rat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,6 +468,7 @@ MonoBehaviour:
   decisionFrequency: 3
   runSpeed: 0.1
   turnSpeed: 5
+  turnAwayFromWalls: 1
 --- !u!114 &114633109105568280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,6 +497,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRunSpeed: 0.1
   maxTurnSpeed: 10
+  whiskersCount: 10
+  whiskersAngle: 120
+  whiskersLength: 1
 --- !u!135 &135140943690460296
 SphereCollider:
   m_ObjectHideFlags: 1
