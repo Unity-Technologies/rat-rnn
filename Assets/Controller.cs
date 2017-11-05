@@ -18,6 +18,8 @@ public class Controller : MonoBehaviour {
 	{
 		var sensors = new float[0];
 
+		// @TODO: whiskers
+
 		var utilities = GetComponents<UtilityBase>();
 		var totalStrength = utilities.Sum(u => u.strength);
 		totalStrength = Mathf.Max(totalStrength, Mathf.Epsilon);
