@@ -15,20 +15,4 @@ public class UtilityExternalControl : UtilityBase {
 			inputX * turnSpeed,	// angular velocity
 			inputY * runSpeed);	// forward velocity
 	}
-
-	/*private Rigidbody rb;
-
-	void Start ()
-	{
-		rb = GetComponent<Rigidbody>();
-	}
-
-	void FixedUpdate ()
-	{
-		float inputX = Input.GetAxis ("Horizontal");
-		float inputY = Input.GetAxis ("Vertical");
-
-		rb.angularVelocity = Vector3.up * inputX * Mathf.Deg2Rad * turnSpeed / Time.deltaTime;
-		rb.velocity = transform.forward * inputY * runSpeed / Time.deltaTime;
-	}*/
 }
