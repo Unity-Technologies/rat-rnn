@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RatAgent : Agent
 {
+    public int episode;
+
     public override List<float> CollectState()
     {
         List<float> state = new List<float>();
@@ -12,6 +14,7 @@ public class RatAgent : Agent
         state.Add(transform.rotation.y);
         state.Add(GetComponent<Rigidbody>().velocity.x);
         state.Add(GetComponent<Rigidbody>().velocity.z);
+        state.Add(episode);
         return state;
     }
 
@@ -26,6 +29,7 @@ public class RatAgent : Agent
         transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
         GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
+        episode += 1;
     }
 
     public override void AgentOnDone()

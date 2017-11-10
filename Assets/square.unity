@@ -182,6 +182,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2352b7e27d9b4596b889cfc221a10c3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &166296763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
+  m_Name: (Clone)(Clone)
+  m_EditorClassIdentifier: 
+  brain: {fileID: 1712573271}
 --- !u!1 &386504329
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +282,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
+--- !u!114 &437931030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
+  m_Name: (Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  continuousPlayerActions: []
+  discretePlayerActions: []
+  defaultAction: 0
+  brain: {fileID: 1712573271}
+--- !u!114 &487231464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
+  m_Name: (Clone)(Clone)
+  m_EditorClassIdentifier: 
+  broadcast: 1
+  brain: {fileID: 1712573271}
 --- !u!1 &1004586088
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,19 +376,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1189042413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943466ab374444748a364f9d6c3e2fe2, type: 3}
-  m_Name: (Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  brain: {fileID: 1712573271}
 --- !u!1001 &1446693703
 Prefab:
   m_ObjectHideFlags: 0
@@ -408,7 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brain: {fileID: 1712573271}
   observations: []
-  maxStep: 1000
+  maxStep: 99
   resetOnDone: 1
   reward: 0
   done: 0
@@ -418,6 +446,7 @@ MonoBehaviour:
   agentStoredAction: []
   memory: []
   id: 0
+  episode: 0
 --- !u!1 &1712573269
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brainParameters:
-    stateSize: 5
+    stateSize: 6
     actionSize: 1
     memorySize: 0
     cameraResolutions: []
@@ -470,10 +499,10 @@ MonoBehaviour:
     stateSpaceType: 1
   brainType: 1
   CoreBrains:
-  - {fileID: 1728582410}
-  - {fileID: 1189042413}
-  - {fileID: 2049596815}
-  instanceID: -13586
+  - {fileID: 437931030}
+  - {fileID: 487231464}
+  - {fileID: 166296763}
+  instanceID: 11250
 --- !u!114 &1712573272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,22 +514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c8216d5b390411faa4bc269741aa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1728582410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e9bda8f3cf1492fa74926a530f6f70, type: 3}
-  m_Name: (Clone)
-  m_EditorClassIdentifier: 
-  broadcast: 1
-  continuousPlayerActions: []
-  discretePlayerActions: []
-  defaultAction: 0
-  brain: {fileID: 1712573271}
 --- !u!1 &1981480329
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,15 +575,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2049596815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35813a1be64e144f887d7d5f15b963fa, type: 3}
-  m_Name: (Clone)
-  m_EditorClassIdentifier: 
-  brain: {fileID: 1712573271}
