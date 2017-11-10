@@ -24,8 +24,11 @@ public class RatAgent : Agent {
 
 	public override void AgentReset()
 	{
-
-	}
+        transform.position = new Vector3(0f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
+        GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+        GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
+;	}
 
 	public override void AgentOnDone()
 	{
