@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class RatAgent : Agent
 {
-
-
-
     public override List<float> CollectState()
     {
         List<float> state = new List<float>();
