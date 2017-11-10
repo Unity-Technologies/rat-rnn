@@ -4,6 +4,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Pp]ackages/
+/[Uu]nityPackageManager/
 /Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
