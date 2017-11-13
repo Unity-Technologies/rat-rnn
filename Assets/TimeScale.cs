@@ -7,12 +7,12 @@ public class TimeScale : MonoBehaviour {
 	public float timeScale = 100.0f;
 	public float moreFixedTimeIterations = 1.0f;
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		Time.timeScale = timeScale;
 		Time.fixedDeltaTime /= moreFixedTimeIterations;
 
-		// since we have more iterations, we can increase speed!
+		// if we increase number of FixedUpdate iterations, we can bump up the speed!
 		foreach (var c in GameObject.FindObjectsOfType<Controller>())
 		{
 			c.runSpeed *= moreFixedTimeIterations;
@@ -23,11 +23,5 @@ public class TimeScale : MonoBehaviour {
 		{
 			u.decisionFrequency *= moreFixedTimeIterations;
 		}
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
