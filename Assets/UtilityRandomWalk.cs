@@ -3,16 +3,18 @@ using System.Linq;
 
 public class UtilityRandomWalk : UtilityBase {
 
-	public float runSpeed = .1f;
-	public float turnSpeed = 5f;
-
+	public float twitchiness = 0.7f;
 	public bool turnAwayFromWalls = true;
+
+	void Start() {}
 
 	protected override Vector2 DoControl(float[] sensors)
 	{
-		var leftX = 1f;
-		var rightX = 1f;
+		var leftX = twitchiness;
+		var rightX = twitchiness;
 
+		// ALTERNATIVE: turnAwayFromWalls could be split into separte Utility
+		// by bumping up priority to override other utilities
 		if (turnAwayFromWalls)
 		{
 			var n = sensors.Length / 2;
@@ -29,11 +31,8 @@ public class UtilityRandomWalk : UtilityBase {
 			}
 		}
 
-		var inputX = Random.Range(-leftX, rightX);
-		var inputY = Random.Range(0, 1f);
-
 		return new Vector2(
-			inputX * turnSpeed,	// angular velocity
-			inputY * runSpeed);	// forward velocity
+			Random.Range(-leftX, rightX),	// angular velocity
+			Random.Range(0, 1f));			// forward velocity
 	}
 }
