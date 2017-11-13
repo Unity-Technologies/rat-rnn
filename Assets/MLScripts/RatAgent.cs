@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RatAgent : Agent
 {
+	public Vector2 startAreaExtents = new Vector2(2.5f, 2.5f);
+
     public int episode;
 
     public override List<float> CollectState()
@@ -25,7 +27,7 @@ public class RatAgent : Agent
 
     public override void AgentReset()
     {
-        transform.position = new Vector3(0f, 0f, 0f);
+		transform.position = new Vector3(Random.Range(-startAreaExtents.x, startAreaExtents.x), 0f, Random.Range(-startAreaExtents.y, startAreaExtents.y));
         transform.rotation = Quaternion.Euler(new Vector3(0f, Random.Range(0f, 360f), 0f));
         GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
