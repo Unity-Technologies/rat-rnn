@@ -11,12 +11,24 @@ public class RatAgent : Agent
     public override List<float> CollectState()
     {
         List<float> state = new List<float>();
-        state.Add(transform.position.x);
-        state.Add(transform.position.z);
-        state.Add(transform.rotation.y);
-        state.Add(GetComponent<Rigidbody>().velocity.x);
-        state.Add(GetComponent<Rigidbody>().velocity.z);
-        state.Add(episode);
+
+		// Y
+        state.Add(transform.position.x); // 0
+        state.Add(transform.position.z); // 1
+
+		// X
+        state.Add(transform.rotation.y); // 2
+        state.Add(GetComponent<Rigidbody>().velocity.x); // 3
+        state.Add(GetComponent<Rigidbody>().velocity.z); // 4
+		state.Add(GetComponent<Rigidbody>().angularVelocity.y); // 5
+		state.Add(GetComponent<Rigidbody>().velocity.magnitude); // 6
+
+		// intent
+		state.Add(GetComponent<Controller>().observableState.heading); // 7
+		state.Add(GetComponent<Controller>().observableState.velocity); // 8
+
+		// aux
+        state.Add(episode); // 9
         return state;
     }
 
