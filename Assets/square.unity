@@ -555,11 +555,11 @@ MonoBehaviour:
   waitTime: 0
   isInference: 1
   trainingConfiguration:
-    width: 80
-    height: 80
+    width: 32
+    height: 32
     qualityLevel: 1
     timeScale: 100
-    targetFrameRate: 60
+    targetFrameRate: -1
   inferenceConfiguration:
     width: 1280
     height: 720

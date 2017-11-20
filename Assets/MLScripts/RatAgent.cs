@@ -17,7 +17,7 @@ public class RatAgent : Agent
         state.Add(transform.position.z); // 1
 
 		// X
-        state.Add(transform.rotation.y); // 2
+		state.Add(transform.rotation.eulerAngles.y/180.0f-1.0f); // 2
         state.Add(GetComponent<Rigidbody>().velocity.x); // 3
         state.Add(GetComponent<Rigidbody>().velocity.z); // 4
 		state.Add(GetComponent<Rigidbody>().angularVelocity.y); // 5
