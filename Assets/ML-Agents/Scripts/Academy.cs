@@ -148,6 +148,7 @@ public abstract class Academy : MonoBehaviour
 
     private void ConfigureEngine()
     {
+        QualitySettings.vSyncCount = 0;
         if ((!isInference))
         {
             Screen.SetResolution(trainingConfiguration.width, trainingConfiguration.height, false);
