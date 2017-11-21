@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RatAgent : Agent
 {
-	public Vector2 startAreaExtents = new Vector2(2.5f, 2.5f);
+	public Vector2 startAreaExtents = Vector2.zero;
 
     public int episode;
 
