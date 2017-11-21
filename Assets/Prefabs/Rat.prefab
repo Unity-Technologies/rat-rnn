@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 114633109105568280}
   - component: {fileID: 114425615856912190}
   - component: {fileID: 114056542471518238}
+  - component: {fileID: 114563177563919976}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Player
@@ -483,6 +484,31 @@ MonoBehaviour:
   decisionFrequency: 3
   twitchiness: 0.7
   turnAwayFromWalls: 1
+--- !u!114 &114563177563919976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268908626731792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfb0820bedb748fb9fc7e19babc0f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 0}
+  observations: []
+  maxStep: 299
+  resetOnDone: 1
+  reward: 0
+  done: 0
+  value: 0
+  CumulativeReward: 0
+  stepCounter: 0
+  agentStoredAction: []
+  memory: []
+  id: 0
+  startAreaExtents: {x: 0, y: 0}
+  episode: 0
 --- !u!114 &114633109105568280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -507,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e5fca66c85943329bbc26afe735277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 5
   turnSpeed: 360
   whiskersCount: 10
   whiskersAngle: 120
